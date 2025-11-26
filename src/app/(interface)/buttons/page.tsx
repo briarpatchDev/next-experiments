@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
-import Button from "@/app/ui/Buttons/Button Set 1/button";
+import { Button } from "@/app/ui/Buttons/Button Set 1/button";
 import NewsIcon from "./news_icon";
 
 export default function Page() {
@@ -38,7 +38,7 @@ export default function Page() {
         padding: "0 1rem",
       }}
     >
-      <Button text="Accept" variant="primary" />
+      <Button onClick={() => {}} text="Accept" variant="primary" />
       <Button
         text="This is a good button!"
         variant="secondary"
@@ -55,6 +55,15 @@ export default function Page() {
         }}
       />
       <Button
+        text="Disabled"
+        variant="primary"
+        disabled={true}
+        onClick={() => {
+          alert("nothing happens!");
+        }}
+      />
+      <Button
+        onClick={() => {}}
         text="News"
         icon={news}
         variant="secondary"
@@ -65,7 +74,12 @@ export default function Page() {
           borderColor: "var(--foreground)",
         }}
       />
-      <Button text="Starry Stars" icon={mountain} variant="primary" />
+      <Button
+        onClick={() => {}}
+        text="Starry Stars"
+        icon={mountain}
+        variant="primary"
+      />
     </div>
   );
 }
