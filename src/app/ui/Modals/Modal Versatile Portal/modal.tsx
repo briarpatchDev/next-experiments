@@ -90,7 +90,7 @@ export default function Modal({
       window.addEventListener("keydown", escapeKey);
     }
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
       if (closeOnEscape) {
         window.removeEventListener("keydown", escapeKey);
       }
@@ -110,7 +110,13 @@ export default function Modal({
       }
     }
   }
-  
+
+  let modalTarget = document.getElementById("modal") as HTMLElement | null;
+  if (!modalTarget) {
+    modalTarget = document.createElement("div");
+    modalTarget.id = "modal";
+    document.body.appendChild(modalTarget);
+  }
   return createPortal(
     <FocusTrap>
       <div
@@ -162,6 +168,6 @@ export default function Modal({
         </div>
       </div>
     </FocusTrap>,
-    document.getElementById("modal-root") as HTMLElement
+    modalTarget
   );
 }
