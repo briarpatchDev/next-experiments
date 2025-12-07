@@ -21,7 +21,8 @@ import { createPortal } from "react-dom";
  * centered - if true, will center the modal vertically rather than being elevated
  * extraTopPadding - if true, will add a little more padding so the closeButton won't overlap with modal content
  * unstyled - if true, removes the default border, background, and padding from modal
- * animate? - if true, the modal will have an entry and exit animation
+ * animate - if true, the modal will have an entry and exit animation
+ * portalTarget - string of an element id, lets you choose the element the portal goes to. default is "modal"
  * backdropStyle  - adds any additional styling to the backdrop
  * modalStyle - adds any additional styling to the modal
  */
@@ -36,6 +37,7 @@ interface ModalProps {
   extraTopPadding?: boolean;
   unstyled?: boolean;
   animate?: boolean;
+  portalTarget?: string;
   backdropStyle?: React.CSSProperties;
   modalStyle?: React.CSSProperties;
 }
@@ -51,6 +53,7 @@ export default function Modal({
   extraTopPadding = false,
   unstyled = false,
   animate = false,
+  portalTarget = "modal",
   backdropStyle,
   modalStyle,
 }: ModalProps) {
@@ -111,11 +114,11 @@ export default function Modal({
     }
   }
 
-  let modalTarget = document.getElementById("modal") as HTMLElement | null;
-  if (!modalTarget) {
-    modalTarget = document.createElement("div");
-    modalTarget.id = "modal";
-    document.body.appendChild(modalTarget);
+  let modal = document.getElementById(portalTarget) as HTMLElement | null;
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = portalTarget;
+    document.body.appendChild(modal);
   }
   return createPortal(
     <FocusTrap>
@@ -168,6 +171,6 @@ export default function Modal({
         </div>
       </div>
     </FocusTrap>,
-    modalTarget
+    modal
   );
 }
