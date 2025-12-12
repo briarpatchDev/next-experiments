@@ -2,6 +2,7 @@
 
 :root {
   color-scheme: light dark;
+  --grey-text: light-dark(rgb(240, 240, 240), rgb(230, 230, 230));
   --wb: light-dark(white, black);
   --bw: light-dark(black, white);
   --wbHard: light-dark(rgb(255, 255, 255), rgb(20, 20, 20));
@@ -9,7 +10,8 @@
   --pageBackground: light-dark(white, rgb(30, 30, 30));
   --background: light-dark(white, rgb(50, 50, 50));
   --foreground: light-dark(black, white);
-  --borderColor: light-dark(rgb(50, 50, 50), white);
+  --borderColor: light-dark(rgb(50, 50, 50), rgb(220, 220, 220));
+  --border: 0.05rem solid var(--borderColor);
   --smallBorder: 0.05rem solid var(--borderColor);
   --softBackground: light-dark(rgb(245, 245, 245), rgb(95, 95, 95));
   --softForeground: light-dark(rgb(95, 95, 95), rgb(245, 245, 245));

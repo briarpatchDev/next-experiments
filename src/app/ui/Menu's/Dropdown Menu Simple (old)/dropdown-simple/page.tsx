@@ -49,20 +49,17 @@ export default function Page() {
           menu={menu}
           containerRef={containerRef}
         />
-        <button>{`Nothing`}</button>
         <DropdownSimple
           label={"Stuff"}
           menu={menu}
           containerRef={containerRef}
         />
-        <button>{`Nothing`}</button>
         <DropdownSimple
           label={"More"}
           menu={menu}
           containerRef={containerRef}
         />
       </div>
-      <button onClick={changeSize}>Change size</button>
     </div>
   );
 }

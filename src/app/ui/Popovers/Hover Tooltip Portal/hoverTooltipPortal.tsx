@@ -342,7 +342,6 @@ export default function HoverTooltipPortal({
     <>
       <div
         ref={childrenRef}
-        aria-expanded={active}
         tabIndex={focusable ? 0 : undefined}
         onMouseEnter={updateTooltipStatus}
         onMouseLeave={updateTooltipStatus}
@@ -363,6 +362,7 @@ export default function HoverTooltipPortal({
               [styles.closing]: closing && fadeEffect,
             })}
             ref={tooltipRef}
+            role="tooltip"
             id={tooltipId}
             tabIndex={0}
           >

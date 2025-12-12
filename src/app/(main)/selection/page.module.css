@@ -1,5 +1,4 @@
-.error_wrapper {
-  flex: 1;
+.selection_wrapper {
   display: flex;
   justify-content: center;
 }

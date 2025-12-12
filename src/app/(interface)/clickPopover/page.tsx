@@ -30,6 +30,7 @@ export function SomeCard({
     >
       {`These are words`}{" "}
       <Button
+        onClick={() => {}}
         text={`Button`}
         variant="primary"
         style={{ backgroundColor: "rgb(140, 140, 140)" }}
@@ -71,6 +72,7 @@ export default function Page() {
       >
         <ClickPopover
           panel={<SomeCard />}
+          panelId="panel-1"
           direction="bottom-right"
           offset={2}
           shiftRem={0}
@@ -92,6 +94,7 @@ export default function Page() {
         </ClickPopover>
         <ClickPopover
           panel={<SomeCard />}
+          panelId="2"
           direction="top"
           offset={2}
           shiftRem={0}
@@ -115,6 +118,7 @@ export default function Page() {
 
         <ClickPopover
           panel={<SomeCard />}
+          panelId="3"
           /*
           panel={<Navbar />}
           content={
